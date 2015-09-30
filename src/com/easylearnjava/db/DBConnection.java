@@ -7,7 +7,7 @@ import java.sql.Connection;
 
 public class DBConnection {
 	
-int i;
+
     Connection conn=null;
 	String driver;
 	String url;
