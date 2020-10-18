@@ -43,7 +43,7 @@
                   "type": "Repudiation",
                   "status": "Open",
                   "severity": "Medium",
-                  "description": "This is the threat that might end up causing RBAC the change the access on the resource"
+                  "description": "This is the threat that might end up causing RBAC to grant high level privilege or access"
                 }
               ],
               "attrs": {
@@ -78,7 +78,7 @@
                   "title": "Elevation of Privilege",
                   "type": "Elevation of privilege",
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "description": "This is the main threat of this Research paper. Change in the data on the source due to the threat mentioned might eventually cause the elevation of privilege. This violets least privilege security design principle.",
                   "mitigation": "We will be proposing solution to have the additional approval or control to detect the data changes. Below are the steps\n1. Detect the data changes on Job Title, Department, Grade, Location etc.\n2. Compare the data change ( if the data change is normal behavior meaning there is no major changes for eg. a user is promoted from Grade II to III, we can skip the approval)\n3. If a data change might impact higher privilege than what user currently holds flag the change  (grade changed from I to IV)\n4. Create Approval action to user's manager and role owner)\n5. If both Approves proceed with grant access\n6. If one of them rejects, stop the process and notify data source owner"
                 }
