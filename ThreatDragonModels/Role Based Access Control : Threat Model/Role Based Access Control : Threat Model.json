@@ -8,7 +8,7 @@
     "contributors": [],
     "diagrams": [
       {
-        "title": "Threat Model",
+        "title": "RBAC Threat Model",
         "thumbnail": "./public/content/images/thumbnail.jpg",
         "id": 0
       }
