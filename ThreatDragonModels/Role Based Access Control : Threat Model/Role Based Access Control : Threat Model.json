@@ -10,7 +10,175 @@
       {
         "title": "RBAC Threat Model",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 50,
+                "y": 50
+              },
+              "angle": 0,
+              "id": "2a628ea9-15eb-4be5-a2e9-848194aa05c9",
+              "z": 1,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Generic tampering threat",
+                  "type": "Tampering",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "The user information can be tampered resulting in unauthorized access to the resource",
+                  "mitigation": "This can be handled by adding approval on IAM system where manager or data owner can validate the truthfulness of data. There can be another project to secure the data source but my focus is on securing from RBAC perspective"
+                },
+                {
+                  "ruleId": "87bc37e2-798e-4d68-bb96-feb1da26da48",
+                  "title": "Unintentional Data change by Administrator",
+                  "type": "Repudiation",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "This is the threat that might end up causing RBAC the change the access on the resource"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Data Source (Workday,\nPeopleSoft etc.)"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 361,
+                "y": 44
+              },
+              "angle": 0,
+              "id": "80e67801-9870-45f0-8c2a-2de2b06cdd51",
+              "z": 2,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "b2a6d40d-d3f8-4750-8e4d-c02cc84b13dc",
+                  "title": "Elevation of Privilege",
+                  "type": "Elevation of privilege",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "This is the main threat of this Research paper. Change in the data on the source due to the threat mentioned might eventually cause the elevation of privilege. This violets least privilege security design principle.",
+                  "mitigation": "We will be proposing solution to have the additional approval or control to detect the data changes. Below are the steps\n1. Detect the data changes on Job Title, Department, Grade, Location etc.\n2. Compare the data change ( if the data change is normal behavior meaning there is no major changes for eg. a user is promoted from Grade II to III, we can skip the approval)\n3. If a data change might impact higher privilege than what user currently holds flag the change  (grade changed from I to IV)\n4. Create Approval action to user's manager and role owner)\n5. If both Approves proceed with grant access\n6. If one of them rejects, stop the process and notify data source owner"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Identity and\nAccess\nManagement"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 601,
+                "y": 48
+              },
+              "angle": 0,
+              "id": "3df5c7f1-79f4-4170-95dd-e777effc07ba",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Resource/Object"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "2a628ea9-15eb-4be5-a2e9-848194aa05c9"
+              },
+              "target": {
+                "id": "80e67801-9870-45f0-8c2a-2de2b06cdd51"
+              },
+              "vertices": [],
+              "id": "56e4a493-46a8-41fe-96f0-0d102fe600d5",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5806552545948415,
+                    "offset": 7.0849344920576
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Connector (API)",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 4,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 599,
+                "y": 94
+              },
+              "target": {
+                "id": "80e67801-9870-45f0-8c2a-2de2b06cdd51"
+              },
+              "vertices": [],
+              "id": "5740abb0-982c-4e6c-80a7-42cf12f0a7ba",
+              "z": 5,
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 790
+        }
       }
     ]
   }
