@@ -119,6 +119,7 @@
               ],
               "z": 5,
               "hasOpenThreats": false,
+              "isEncrypted": true,
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
@@ -147,7 +148,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Access to Object"
+                  "text": "Object/Resource"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
