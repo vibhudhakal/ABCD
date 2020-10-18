@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "title": "Role Based Access Control : Threat Model",
+    "owner": "Vibhu Dhakal",
+    "description": "I have selected Identity and Access Management as my problem domain for this research paper. Being a security professional working in the same sector is what inspired me do select this topic. I am planning to study, analyze on Role based access control as a sub domain and list out some of the security issues along with proposed technical solution to reduce the issues. Role Based Access is a mechanism widely used in identity and access management to automate and control the access each user have/should have e on corporate systems and applications based on their job functionality. This concept has been implemented by different Identity and Access management providers such as SailPoint IdentityIQ, Net IQ, IBM Tivoli Identity Management etc. This concept is primarily based on Least Privilege Secure Design Principle which states privilege should only be granted so that individual can perform their duty, and nothing more. This paper will focus on the core design principle which relies heavily on other source of information and can potentially cause security issues. The security measure will then be put in place with the effort to quantify control due to control in place.\n\nThe main use for this research is, how we can secure the data changes to secure the access granted to users. As the role based access control is like a reference monitor which checks users roles vs access they need, the role is key to concept. If a user posses a higher level role than they should have that might possibly violates the security policy. The proposed solution to overcome or reduce the issue is to have role owner or manager approval when there is a change in role i.e. role changes because of the change in position, department etc. for a user."
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "Threat Model",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ]
+  }
+}
